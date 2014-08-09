@@ -13,4 +13,9 @@ class Game
     @score = pins
   end
 
+  def roll(pins)
+    @score += pins
+  end
+
+
 end
