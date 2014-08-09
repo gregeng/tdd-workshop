@@ -5,7 +5,7 @@ describe BowlingGame do
 
   it 'scores gutters as a 0' do
     game = BowlingGame.new
-    20.times { game roll(0) }
+    20.times { game.roll(0) }
 
     expect(game.score).to eq(0)
   end
