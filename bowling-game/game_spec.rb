@@ -39,7 +39,7 @@ module Bowling
     end
 
     it "returns a score of 300 for a perfect game" do
-      30.times { game.strike }
+      repeat(30) { game.strike }
 
       expect(game.score).to eq(300)
     end
