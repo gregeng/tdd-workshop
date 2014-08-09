@@ -24,5 +24,16 @@ module Bowling
 
       expect(game.score).to eq(pins)
     end
+
+    it "returns a total score of 10 plus the total of the next two throws after a strike is thrown" do
+      game = Game.new
+      game.strike
+
+      game.roll(8)
+      game.roll(9)
+
+      expect(game.score).to eq(27)
+    end
+
   end
 end
