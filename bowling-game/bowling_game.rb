@@ -1,4 +1,5 @@
 class BowlingGame
+  attr_reader :score
 
   def initialize
     @score = 0
@@ -7,12 +8,4 @@ class BowlingGame
   def roll(number)
     @score += number
   end
-
-  def score
-    @score
-  end
-
-
-
-
 end
