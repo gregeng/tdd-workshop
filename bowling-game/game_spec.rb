@@ -9,5 +9,13 @@ module Bowling
 
       expect(game.score).to eq(0)
     end
+
+    it "returns 10 for a strike" do
+      game = Game.new
+      game.strike
+
+      expect(game.score).to eq(10)
+    end
+
   end
 end
