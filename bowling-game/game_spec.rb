@@ -16,19 +16,25 @@ module Bowling
       expect(game.score).to eq(10)
     end
 
-    it "returns the number of pins hit for a spare" do
-      pins = 3
-      game.spare(pins)
+    it "returns 10 for a spare" do
+      game.spare
 
-      expect(game.score).to eq(pins)
+      expect(game.score).to eq(10)
     end
 
     it "returns a total score of 10 plus the total of the next two throws after a strike is thrown" do
       game.strike
-      game.roll(8)
-      game.roll(9)
+      game.roll(3)
+      game.roll(5)
 
-      expect(game.score).to eq(27)
+      expect(game.score).to eq(18)
+    end
+
+    it "returns a total score of 10 plus the total of the next single throw after a spare is thrown" do
+      game.spare
+      game.roll(6)
+
+      expect(game.score).to eq(16)
     end
 
   end

@@ -9,8 +9,8 @@ class Game
     @score = 10
   end
 
-  def spare(pins)
-    @score = pins
+  def spare
+    @score = 10
   end
 
   def roll(pins)
