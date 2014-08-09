@@ -20,7 +20,12 @@ class Game
     @score = 10
   end
 
-  def roll(pins, frame = 1)
+  def roll(pins, args={})
+    if args.empty?
+      frame = 1
+    else
+      frame = args[:frame]
+    end
     @score += pins
     update_score_card(pins, frame)
   end

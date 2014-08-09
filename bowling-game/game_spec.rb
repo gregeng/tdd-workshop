@@ -61,13 +61,11 @@ module Bowling
     end
 
     it "returns the total score for the first two frames of the game" do
-      # Frame 1
       game.roll(2)
       game.roll(6)
 
-      # Frame 2
-      game.roll(7, 2)
-      game.roll(1, 2)
+      game.roll(7, frame: 2)
+      game.roll(1, frame: 2)
 
       expect(game.score).to eq(16)
     end
