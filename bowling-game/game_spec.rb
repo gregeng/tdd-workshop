@@ -1,4 +1,5 @@
 require_relative "./game.rb"
+require_relative "./spec_helper.rb"
 require 'rspec'
 
 module Bowling
