@@ -21,11 +21,7 @@ class Game
   end
 
   def roll(pins, args={})
-    if args.empty?
-      frame = 1
-    else
-      frame = args[:frame]
-    end
+    frame = initialize_frame(args)
     @score += pins
     update_score_card(pins, frame)
   end
@@ -41,6 +37,8 @@ class Game
     @score_card[frame] << pins
   end
 
-
-
+  def initialize_frame(args)
+    return 1 if args.empty?
+    args.fetch(:frame)
+  end
 end
