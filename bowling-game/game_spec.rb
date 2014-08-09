@@ -44,5 +44,23 @@ module Bowling
       expect(game.score).to eq(300)
     end
 
+    it "should return a first frame score of 8 for a first throw of 6 and a second throw of 2" do
+      game.frame = 1
+
+      game.roll(6)
+      game.roll(2)
+
+      expect(game.score).to eq(8)
+    end
+
+    it "should return the score for an individual given frame" do
+      game.roll(6)
+      game.roll(2)
+
+      expect(game.score_for(1)).to eq([6, 2])
+    end
+
+
+
   end
 end
