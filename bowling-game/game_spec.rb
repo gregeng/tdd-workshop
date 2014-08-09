@@ -70,5 +70,16 @@ module Bowling
       expect(game.score).to eq(16)
     end
 
+    it "Rolling a strike in the second frame: All 10 pins are hit on the first ball roll. Score is 10 pins + Score for the next two ball rolls" do
+      game.roll(6)
+      game.roll(2)
+      game.roll(10, frame: 2)
+      game.roll(9, frame: 3)
+      game.roll(0, frame: 3)
+
+      expect(game.score).to eq(8 + 10 + 9 + 0)
+    end
+
+
   end
 end
