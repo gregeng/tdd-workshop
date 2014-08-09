@@ -3,22 +3,20 @@ require 'rspec'
 
 module Bowling
   describe Game do
+    let(:game) { Game.new }
+
     it "returns 0 for a gutter ball" do
-      game = Game.new
       game.miss
 
       expect(game.score).to eq(0)
     end
 
     it "returns 10 for a strike" do
-      game = Game.new
       game.strike
-
       expect(game.score).to eq(10)
     end
 
     it "returns the number of pins hit for a spare" do
-      game = Game.new
       pins = 3
       game.spare(pins)
 
@@ -26,9 +24,7 @@ module Bowling
     end
 
     it "returns a total score of 10 plus the total of the next two throws after a strike is thrown" do
-      game = Game.new
       game.strike
-
       game.roll(8)
       game.roll(9)
 
