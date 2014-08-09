@@ -5,7 +5,7 @@ class BowlingGame
     @score = 0
   end
 
-  def roll(number)
-    @score += number
+  def roll(pins)
+    @score += pins
   end
 end
